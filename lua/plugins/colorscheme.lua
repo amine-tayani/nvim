@@ -13,7 +13,7 @@ return {
       },
     })
 
-    vim.cmd("colorscheme carbonfox")
+    vim.cmd("colorscheme nightfox")
 
     vim.cmd([[
       highlight Normal guibg=NONE ctermbg=NONE

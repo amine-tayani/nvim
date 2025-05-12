@@ -6,16 +6,13 @@ return {
         width = 40,
         sections = function()
           local header = [[
-                        
-           
-░  ░░░░  ░░░      ░░░  ░░░░  ░░        ░░  ░░░░  ░░░      ░░
-▒   ▒▒   ▒▒  ▒▒▒▒  ▒▒▒  ▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒   ▒▒   ▒▒  ▒▒▒▒  ▒
-▓        ▓▓  ▓▓▓▓  ▓▓▓▓    ▓▓▓▓▓▓▓  ▓▓▓▓▓        ▓▓  ▓▓▓▓  ▓
-█  █  █  ██        ███  ██  ██████  █████  █  █  ██        █
-█  ████  ██  ████  ██  ████  ██        ██  ████  ██  ████  █
-                                                            
 
 
+  ███    ███  █████  ██   ██ ██ ███    ███  █████  
+  ████  ████ ██   ██  ██ ██  ██ ████  ████ ██   ██ 
+  ██ ████ ██ ███████   ███   ██ ██ ████ ██ ███████ 
+  ██  ██  ██ ██   ██  ██ ██  ██ ██  ██  ██ ██   ██ 
+  ██      ██ ██   ██ ██   ██ ██ ██      ██ ██   ██ 
           ]]
           local function greeting()
             local hour = tonumber(vim.fn.strftime("%H"))
@@ -36,9 +33,7 @@ return {
               { icon = " ", key = "q", desc = "Quit",            action = ":qa" } },
             { title = "Recent Projects", section = "projects", indent = 2, padding = 1 },
             { title = "Maintenance Actions", indent = 2, padding = 2,
-              { icon = " ", key = "c", desc = "Config",      action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})", },
               { icon = "󰒲 ", key = "l", desc = "Lazy",        action = ":Lazy" },
-              { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
               { icon = "󱁤 ", key = "m", desc = "Mason",       action = ":Mason" },                          },
             { section = "startup" },
           }
