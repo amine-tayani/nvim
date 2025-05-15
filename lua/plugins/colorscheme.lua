@@ -1,25 +1,14 @@
 return {
-  "EdenEast/nightfox.nvim",
-  priority = 1000,
-  lazy = false,
-  config = function()
-    require("nightfox").setup({
-      options = {
-        transparent = true,
-        terminal_colors = true,
-        styles = {
-          comments = "italic",
-        },
+  {
+    {
+      "tiagovla/tokyodark.nvim",
+      opts = {
+        transparent_background = true,
       },
-    })
-
-    vim.cmd("colorscheme nightfox")
-
-    vim.cmd([[
-      highlight Normal guibg=NONE ctermbg=NONE
-      highlight NormalNC guibg=NONE ctermbg=NONE
-      highlight NormalFloat guibg=NONE ctermbg=NONE
-      highlight FloatBorder guibg=NONE ctermbg=NONE
-    ]])
-  end,
+      config = function(_, opts)
+        require("tokyodark").setup(opts) -- calling setup is optional
+        vim.cmd([[colorscheme tokyodark]])
+      end,
+    },
+  },
 }

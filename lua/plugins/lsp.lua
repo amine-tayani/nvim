@@ -28,6 +28,9 @@ return {
           end,
         },
         tsserver = {
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+          end,
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
@@ -58,6 +61,7 @@ return {
           },
         },
         html = {},
+        biome = {},
         lua_ls = {
           -- enabled = false,
           single_file_support = true,
